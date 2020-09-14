@@ -12,23 +12,16 @@ END = '\033[0m'
 
 
 distro = "Arch Linux"
-kernel = subprocess.getoutput('uname').lower()+' '+subprocess.getoutput('uname --kernel-release')
-wm = subprocess.getoutput('xprop -id '+xid+' -notype -len 100 -f _NET_WM_NAME 8t')
-wm = re.findall(r'_NET_WM_NAME = \"(\w+)\"', wm)
-if len(wm) > 0:
-    wm = wm[0].lower()
-else:
-    wm = 'none'
-uptime = subprocess.getoutput('uptime -p').replace('up ','')
-if uptime == '':
-    uptime = 'meow'
-shell = subprocess.getoutput('basename "$SHELL"')
+kernel = 'linux '+subprocess.getoutput('uname --kernel-release')
+wm = "spectrwm" 
+uptime = subprocess.getoutput('uptime -p | sed "s/up //g" | sed "s/,/ and/g"')
+shell = "bash"
 
 
 print('''         /\           ''')
-print('''        /  \          {}'''.format(BOLD+"\tdistro: \t"+END+distro))
-print('''       /\   \         {}'''.format(BOLD+"\tkernel: \t"+END+kernel))
-print('''      /  __  \        {}'''.format(BOLD+"\twm: \t\t"+END+wm))
-print('''     /  (  )  \       {}'''.format(BOLD+"\tuptime: \t"+END+uptime))
-print('''    / __|  |__\\\\    {}'''.format(BOLD+"\tshell: \t\t"+END+shell))
+print('''        /  \          {}'''.format(BOLD+"\tdistro: "+END+distro))
+print('''       /\   \         {}'''.format(BOLD+"\tkernel: "+END+kernel))
+print('''      /  __  \        {}'''.format(BOLD+"\twm:     "+END+wm))
+print('''     /  (  )  \       {}'''.format(BOLD+"\tuptime: "+END+uptime))
+print('''    / __|  |__\\\\    {}'''.format(BOLD+"\tshell:  "+END+shell))
 print('''   /.`        `.\   \n''')
