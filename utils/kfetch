@@ -1,20 +1,20 @@
-#!/usr/bin/env python
-import subprocess
+#!/bin/bash
 
-BOLD = '\033[1m'
-END = '\033[0m'
+BOLD='\033[1m'
+END='\033[0m'
 
-distro = "Arch Linux"
-kernel = 'linux '+subprocess.getoutput('uname --kernel-release')
-wm = "spectrwm" 
-uptime = subprocess.getoutput('uptime -p | sed "s/up //g" | sed "s/,/ and/g"')
-shell = "bash"
+distro="Arch Linux"
+kernel=$(echo -e "linux $(uname --kernel-release)")
+wm="spectrwm" 
+uptime=$(echo -e "$(uptime -p | sed 's/up //g' | sed 's/,/ and/g')")
+shell="bash"
 
 
-print('''         /\           ''')
-print('''        /  \          {}'''.format(BOLD+"\tdistro: "+END+distro))
-print('''       /\   \         {}'''.format(BOLD+"\tkernel: "+END+kernel))
-print('''      /  __  \        {}'''.format(BOLD+"\twm:     "+END+wm))
-print('''     /  (  )  \       {}'''.format(BOLD+"\tuptime: "+END+uptime))
-print('''    / __|  |__\\\\    {}'''.format(BOLD+"\tshell:  "+END+shell))
-print('''   /.`        `.\   \n''')
+echo -e "                       "
+echo -e "         /\\           "
+echo -e "        /  \\          ${BOLD}\tdistro: ${END}${distro}"
+echo -e "       /\\   \\         ${BOLD}\tkernel: ${END}${kernel}"
+echo -e "      /  __  \\        ${BOLD}\twm:     ${END}${wm}"
+echo -e "     /  (  )  \\       ${BOLD}\tuptime: ${END}${uptime}"
+echo -e "    / __|  |__\\\\\      ${BOLD}\tshell:  ${END}${shell}"
+echo -e "   /.\`        \`.\\     \n"
