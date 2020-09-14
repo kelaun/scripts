@@ -1,15 +1,8 @@
 #!/usr/bin/env python
-import platform, subprocess, re
-
-subprocess.run('clear')
-
-uname = platform.uname()
-xid = subprocess.getoutput('xprop -root -notype _NET_SUPPORTING_WM_CHECK')
-xid=xid[-8:]
+import subprocess
 
 BOLD = '\033[1m'
 END = '\033[0m'
-
 
 distro = "Arch Linux"
 kernel = 'linux '+subprocess.getoutput('uname --kernel-release')
