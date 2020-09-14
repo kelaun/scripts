@@ -22,11 +22,8 @@ BAT="$(case $STATE in
   *) echo "Charging";;
 esac)"
 
-# PACKAGES
-PACKGS="$(pacman -Q | wc -l)"
-
 # Final bar
-echo "PKG: ${PACKGS}   BAT: ${BAT}   NET: ${NETNAME}   VOL: ${VOLUME}   ${TODAY}"
+echo "BAT: ${BAT}   NET: ${NETNAME}   VOL: ${VOLUME}   ${TODAY}"
 sleep 1
 
 done
