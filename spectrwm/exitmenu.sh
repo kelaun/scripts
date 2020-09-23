@@ -4,7 +4,7 @@
 #
 ###
 
-. $HOME/.dmenurc
+. $HOME/.config/dmenu/.dmenurc
 DMENU="dmenu $DMENU_OPTIONS"
 choice=$(echo -e "shutdown\nreboot\nsuspend" | $DMENU)
 
