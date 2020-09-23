@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /home/kelaun/.dmenurc
+source /home/kelaun/.config/dmenu/.dmenurc
 
 selection=`echo -e $(lpass ls | awk -F '[/[]' '{print $(NF-1)"\\\n"}' | sort) | dmenu $DMENU_OPTIONS`
 
