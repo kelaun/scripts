@@ -1,0 +1,20 @@
+#!/bin/bash
+
+BOLD='\033[1m'
+END='\033[0m'
+
+distro="Arch Linux"
+kernel=$(echo -e "linux $(uname --kernel-release)")
+wm="spectrwm" 
+hostname=$(hostname)
+shell="bash"
+
+
+echo -e "                       "
+echo -e "         /\\           "
+echo -e "        /  \\          ${BOLD}\tdistro:   ${END}${distro}"
+echo -e "       /\\   \\         ${BOLD}\tkernel:   ${END}${kernel}"
+echo -e "      /  __  \\        ${BOLD}\thostname: ${END}${hostname}"
+echo -e "     /  (  )  \\       ${BOLD}\twm:       ${END}${wm}"
+echo -e "    / __|  |__\\\\\      ${BOLD}\tshell:    ${END}${shell}"
+echo -e "   /.\`        \`.\\     \n"
