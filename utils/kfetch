@@ -6,7 +6,8 @@ END='\033[0m'
 distro="Arch Linux"
 kernel=$(echo -e "linux $(uname --kernel-release)")
 wm="spectrwm" 
-uptime=$(echo -e "$(uptime -p | sed 's/up //g' | sed 's/,/ and/g')")
+#uptime=$(echo -e "$(uptime -p | sed 's/up //g' | sed 's/,/ and/g')")
+hostname=$(hostname)
 shell="bash"
 
 
@@ -14,7 +15,7 @@ echo -e "                       "
 echo -e "         /\\           "
 echo -e "        /  \\          ${BOLD}\tdistro: ${END}${distro}"
 echo -e "       /\\   \\         ${BOLD}\tkernel: ${END}${kernel}"
-echo -e "      /  __  \\        ${BOLD}\twm:     ${END}${wm}"
-echo -e "     /  (  )  \\       ${BOLD}\tuptime: ${END}${uptime}"
+echo -e "      /  __  \\        ${BOLD}\twm:     ${END}${hostname}"
+echo -e "     /  (  )  \\       ${BOLD}\tuptime: ${END}${wm}"
 echo -e "    / __|  |__\\\\\      ${BOLD}\tshell:  ${END}${shell}"
 echo -e "   /.\`        \`.\\     \n"
